@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools<81", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flexcut"
+version = "0.1.0"
+description = "Minimal PyTorch Lightning training package for MLIP training and finetuning"
+readme = "README.md"
+authors = [
+    { name = "Rick Oerder", email = "rick.benedikt.oerder@scai.fraunhofer.de" },
+]
+maintainers = [
+    { name = "Rick Oerder", email = "rick.benedikt.oerder@scai.fraunhofer.de" },
+]
+dependencies = [
+    "torch>=2.1.0",
+    "torchmetrics",
+    "pytorch_lightning>=2.2.1,<2.4.0",
+    "torch_geometric>=2.5.3",
+    "h5py",
+    "ase",
+    "pymatgen",
+    "setuptools<81"
+]
+
+requires-python = ">=3.11"
+
+[project.optional-dependencies]
+dev = [
+    "black==25.9.0"
+]
+mace = [
+    "mace-torch>=0.3.10",
+    "e3nn",
+]
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["flexcut*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+include = '^(src|examples|tests)/.*\.py$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "$version"
+version_scheme = "semver"
+version_provider = "pep621"
+update_changelog_on_bump = false
+major_version_zero = true
