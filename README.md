@@ -2,7 +2,7 @@
 <p align="center"> Optimizing Machine Learning Potentials After Training </p>
 
 <p align="center">
-  <strong><a href="https://arxiv.org/abs/2603.10205">Preprint</a></strong> 
+  <strong><a href="https://iopscience.iop.org/article/10.1088/2632-2153/ae9239">Article</a></strong>  
 </p>
 
 
@@ -17,7 +17,7 @@ pip install -e .[mace]
 Flexible Cutoff Learning (FCL) is a training method for machine learning interatomic potentials (MLIPs) that enables post-training adjustment of cutoff radii by randomly sampling cutoffs during training. Using a differentiable cost model, the cutoffs can be optimized for specific target systems after training, allowing application-specific accuracy-cost tradeoffs without retraining.
 
 Currently, only the `MACE` architecture [2] is supported. 
-For more information, see [our preprint](https://arxiv.org/abs/2603.10205). Note: The code used for the paper is part of an internal package. This repo contains a faithful reimplementation of FCL. 
+For more information, see [our article](https://iopscience.iop.org/article/10.1088/2632-2153/ae9239). Note: The code used for the paper is part of an internal package. This repo contains a faithful reimplementation of FCL. 
 
 <h2 align="center"><img src="./assets/fcl_optimization.png" alt="Flexible Cutoff Learning" width="400"></h2>
 
@@ -118,12 +118,11 @@ torch.save(lightning_module.model, "fcl_wrapper.pt")
 - [1] Flexible Cutoff Learning: 
     ```
     @article{FCL_2026,
-    author = {Oerder, Rick and Hamaekers, Jan},
-    year = {2026},
-    month = {03},
-    pages = {},
-    title = {Flexible Cutoff Learning: Optimizing Machine Learning Potentials After Training},
-    doi = {10.48550/arXiv.2603.10205}
+    author  = {Oerder, Rick and Hamaekers, Jan},
+    title   = {Flexible Cutoff Learning: Optimizing machine learning potentials after training},
+    journal = {Machine Learning: Science and Technology},
+    doi     = {10.1088/2632-2153/ae9239},
+    year    = {2026}
     }
     ```
 
